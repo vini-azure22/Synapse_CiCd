@@ -1,0 +1,27 @@
+{
+	"name": "Pipeline 1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "asas",
+					"value": "asa"
+				}
+			}
+		],
+		"variables": {
+			"asas": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
