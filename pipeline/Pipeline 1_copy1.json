@@ -22,6 +22,8 @@
 				"type": "String"
 			}
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2023-08-03T14:45:33Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
 }
