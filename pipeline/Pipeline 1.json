@@ -12,13 +12,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "asas",
-					"value": "asa"
+					"variableName": "teste",
+					"value": "teste"
 				}
 			}
 		],
 		"variables": {
 			"asas": {
+				"type": "String"
+			},
+			"teste": {
 				"type": "String"
 			}
 		},
