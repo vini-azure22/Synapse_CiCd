@@ -1,0 +1,30 @@
+{
+	"name": "teste3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "teste3",
+					"value": "teste3"
+				}
+			}
+		],
+		"variables": {
+			"asasa": {
+				"type": "String"
+			},
+			"teste3": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
