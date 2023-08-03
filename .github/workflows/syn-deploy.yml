@@ -15,9 +15,9 @@ jobs:
         - uses: Azure/Synapse-workspace-deployment@V1.7.0
           with:
             TargetWorkspaceName: ${{secrets.WORKSPACENAME}}
-            TemplateFile: './wp-syn-dev/TemplateForWorkspace.json'
-            ParametersFile: './wp-syn-dev/TemplateParametersForWorkspace.json'
-            OverrideArmParameters: './wp-syn-dev/ParameterPrd.json'
+            TemplateFile: './azure-teste-dev/TemplateForWorkspace.json'
+            ParametersFile: './azure-teste-dev/TemplateParametersForWorkspace.json'
+            #OverrideArmParameters: './wp-syn-dev/ParameterPrd.json'
             environment: 'Azure Public'
             resourceGroup: ${{secrets.RESOURCEGROUP}}
             clientId: ${{secrets.CLIENTID}}
