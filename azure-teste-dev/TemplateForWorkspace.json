@@ -12,9 +12,18 @@
 			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'azure-teste-dev-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-dev.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
+		"azure-teste-prd-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'azure-teste-prd-WorkspaceDefaultSqlServer'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-prd.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
 		"azure-teste-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://datalake4test.dfs.core.windows.net"
+		},
+		"azure-teste-prd-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalake4testprd.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -51,7 +60,8 @@
 						"type": "String"
 					}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2023-08-03T14:45:32Z"
 			},
 			"dependsOn": []
 		},
@@ -82,6 +92,44 @@
 				},
 				"variables": {
 					"asasa": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-08-03T14:45:33Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/bruno01')]",
+			"type": "Microsoft.Synapse/workspaces/pipelines",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"activities": [
+					{
+						"name": "Set variable1",
+						"type": "SetVariable",
+						"dependsOn": [],
+						"policy": {
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "teste3",
+							"value": "teste3"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"variables": {
+					"asasa": {
+						"type": "String"
+					},
+					"teste3": {
 						"type": "String"
 					}
 				},
@@ -122,7 +170,8 @@
 						"type": "String"
 					}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2023-08-03T14:45:33Z"
 			},
 			"dependsOn": []
 		},
@@ -159,6 +208,49 @@
 				"type": "AzureBlobFS",
 				"typeProperties": {
 					"url": "[parameters('azure-teste-dev-WorkspaceDefaultStorage_properties_typeProperties_url')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/azure-teste-prd-WorkspaceDefaultSqlServer')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"parameters": {
+					"DBName": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('azure-teste-prd-WorkspaceDefaultSqlServer_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/azure-teste-prd-WorkspaceDefaultStorage')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('azure-teste-prd-WorkspaceDefaultStorage_properties_typeProperties_url')]"
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",

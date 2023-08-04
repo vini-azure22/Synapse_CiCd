@@ -8,8 +8,14 @@
 		"azure-teste-dev-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-dev.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
+		"azure-teste-prd-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-prd.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
 		"azure-teste-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://datalake4test.dfs.core.windows.net"
+		},
+		"azure-teste-prd-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://datalake4testprd.dfs.core.windows.net"
 		}
 	}
 }
