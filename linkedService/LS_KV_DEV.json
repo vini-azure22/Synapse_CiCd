@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://kv-group-ci-cd.vault.azure.net/"
+			"baseUrl": "https://kv-group-ci-cd-prd.vault.azure.net/"
 		}
 	}
 }
