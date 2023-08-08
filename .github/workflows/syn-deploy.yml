@@ -17,7 +17,7 @@ jobs:
             TargetWorkspaceName: ${{secrets.WORKSPACENAME}}
             TemplateFile: './azure-teste-dev/TemplateForWorkspace.json'
             ParametersFile: './azure-teste-dev/TemplateParametersForWorkspace.json'
-            #OverrideArmParameters: './wp-syn-dev/ParameterPrd.json'
+            OverrideArmParameters: './azure-teste-dev/ParameterPrd.json'
             environment: 'Azure Public'
             resourceGroup: ${{secrets.RESOURCEGROUP}}
             clientId: ${{secrets.CLIENTID}}
