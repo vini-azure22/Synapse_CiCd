@@ -11,6 +11,9 @@
 		"azure-teste-prd-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-prd.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
+		"LS_KV_DEV_properties_typeProperties_baseUrl": {
+			"value": "https://kv-group-ci-cd.vault.azure.net/"
+		},
 		"azure-teste-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://datalake4test.dfs.core.windows.net"
 		},

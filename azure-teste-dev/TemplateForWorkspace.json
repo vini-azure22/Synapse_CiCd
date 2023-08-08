@@ -17,6 +17,10 @@
 			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'azure-teste-prd-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-prd.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
+		"LS_KV_DEV_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-group-ci-cd.vault.azure.net/"
+		},
 		"azure-teste-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://datalake4test.dfs.core.windows.net"
@@ -107,6 +111,19 @@
 					}
 				},
 				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/LS_KV_DEV')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('LS_KV_DEV_properties_typeProperties_baseUrl')]"
+				}
 			},
 			"dependsOn": []
 		},
