@@ -1,0 +1,10 @@
+{
+	"name": "LS_KV_DEV",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-group-ci-cd.vault.azure.net/"
+		}
+	}
+}
