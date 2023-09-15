@@ -4,22 +4,22 @@
 	"parameters": {
 		"workspaceName": {
 			"type": "string",
-			"metadata": "Nome do Workspace",
+			"metadata": "Workspace name",
 			"defaultValue": "azure-teste-dev"
 		},
 		"azure-teste-dev-WorkspaceDefaultSqlServer_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'azure-teste-dev-WorkspaceDefaultSqlServer'",
+			"metadata": "Secure string for 'connectionString' of 'azure-teste-dev-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-dev.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"azure-teste-prd-WorkspaceDefaultSqlServer_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'azure-teste-prd-WorkspaceDefaultSqlServer'",
+			"metadata": "Secure string for 'connectionString' of 'azure-teste-prd-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:azure-teste-prd.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"LS_KV_DEV_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://kv-group-ci-cd.vault.azure.net/"
+			"defaultValue": "https://kv-group-ci-cd-prd.vault.azure.net/"
 		},
 		"azure-teste-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
@@ -35,7 +35,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('workspaceName'), '/teste1')]",
+			"name": "[concat(parameters('workspaceName'), '/Pipeline 1')]",
 			"type": "Microsoft.Synapse/workspaces/pipelines",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -50,8 +50,8 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"variableName": "WORKSPACENAME",
-							"value": "azure-teste-dev"
+							"variableName": "WE",
+							"value": "WE"
 						}
 					}
 				],
@@ -60,13 +60,7 @@
 					"cancelAfter": {}
 				},
 				"variables": {
-					"asasa": {
-						"type": "String"
-					},
-					"teste3": {
-						"type": "String"
-					},
-					"WORKSPACENAME": {
+					"WE": {
 						"type": "String"
 					}
 				},
@@ -75,7 +69,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/teste1_copy1')]",
+			"name": "[concat(parameters('workspaceName'), '/Pipeline 2')]",
 			"type": "Microsoft.Synapse/workspaces/pipelines",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -90,8 +84,8 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"variableName": "WORKSPACENAME",
-							"value": "azure-teste-dev"
+							"variableName": "WEWEWE",
+							"value": "EWEWE"
 						}
 					}
 				],
@@ -100,13 +94,10 @@
 					"cancelAfter": {}
 				},
 				"variables": {
-					"asasa": {
+					"WEWEWE": {
 						"type": "String"
 					},
-					"teste3": {
-						"type": "String"
-					},
-					"WORKSPACENAME": {
+					"WE": {
 						"type": "String"
 					}
 				},
