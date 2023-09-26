@@ -1,0 +1,30 @@
+{
+	"name": "Pipeline 3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "WEWEWE",
+					"value": "EWEWE"
+				}
+			}
+		],
+		"variables": {
+			"WEWEWE": {
+				"type": "String"
+			},
+			"WE": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
