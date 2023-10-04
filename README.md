@@ -378,9 +378,6 @@ Em sua branch no ambiente de Desenvolvimento após existir mudanças, o processo
 </kbd>
 <br><br><br>
 
-## Estrutura do projeto
-
-
 <br><br><br>
 ## Licença
 
