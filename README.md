@@ -1,5 +1,3 @@
-# Synapse_CiCd
-
 # Implementação de esteira CI/CD (Integração contínua/Entrega contínua)
 <p align="justify"> CI/CD é um termo abrangente que cobre várias fases do DevOps. CI (integração contínua) é a prática de integrar alterações de código em um repositório várias vezes ao dia. CD tem dois significados: a entrega contínua automatiza as integrações de código, enquanto a implementação contínua libera automaticamente as compilações finais para os usuários finais. Os testes frequentes de CI/CD reduzem erros e defeitos de código, tornando-os essenciais para todo fluxo de trabalho de fluxo de trabalho.</p>
 
