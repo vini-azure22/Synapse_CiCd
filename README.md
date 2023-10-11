@@ -3,9 +3,8 @@
 - [English](README_EN.md)
 
 
-# Implementação de esteira CI/CD (Integração contínua/Entrega contínua)
+## Implementação de esteira CI/CD (Integração contínua/Entrega contínua)
 <p align="justify"> CI/CD é um termo abrangente que cobre várias fases do DevOps. CI (integração contínua) é a prática de integrar alterações de código em um repositório várias vezes ao dia. CD tem dois significados: a entrega contínua automatiza as integrações de código, enquanto a implementação contínua libera automaticamente as compilações finais para os usuários finais. Os testes frequentes de CI/CD reduzem erros e defeitos de código, tornando-os essenciais para todo fluxo de trabalho de fluxo de trabalho.</p>
-
 
 ## Conteúdos do documento
   * Autores
@@ -15,134 +14,133 @@
   * Uso
   * Licença
 
-## Autores:
 
-Bruno Andrade<br>
-Raphael Freixo<br>
-Vinícius Peters<br>
+## Configuração
+### Arquivo readme.yml
+<p align="justify">Em seu repositório Github na aba Code, aperte em <strong>creating a new file</strong>.</p>
 
-## Visão geral
-<p align="justify">A implementação da esteira CI/CD é necessária para agilizar e padronizar a estrutura de seu ambiente, garantindo a qualidade dos códigos no ambiente de desenvolvimento até sua implementação no ambiente de produção, que é realizada automaticamente após a aprovação dos artefatos.
-Nesse documento contém o procedimento para implementar essa estrutura de CI/CD utilizando Github Actions e o ambiente Azure.</p>
-
-## Pré-requisitos:
-
-* Possuir usuário de serviço com permissão de acesso ao synapse;
-* Conta no github com repositório criado;
-* Permissão de READER ao resource group;
-* Permissão de CONTRIBUTOR ao Synapse-Production;
-* Conceder permissão do Service Principal;
-* Possuir ambiente Synapse de Desenvolvimento(DEV) e produção(PROD);<br><br>
-
-## Configuração Github:
-<p align="justify"> No seu repositório Github, aperte em <strong>creating a new file<strong>.</p>
 <kbd>
-<br><br>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/2bcd8beb-74ce-44de-b009-942da3b396f7">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/8c8d9fec-6558-46de-bd87-b242761201b2">
 </kbd>
 <br><br><br>
-<p align="justify"> No caminho de pastas, crie um arquivo chamado "readme.yml" na seguinte estrutura de pasta ".github/workflows/readme.yml". Após feito isso, aperte em <strong>Commit Changes...<strong></p>
+<p align="justify">No caminho de pastas, crie um arquivo chamado <strong>readme.yml</strong> na seguinte estrutura <strong> ".github/workflows/readme.yml"</strong>. Após feito isso, aperte em <strong>Commit Changes...</strong></p>
+
 <kbd>
-<br><br>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/209a8179-1f60-4bdf-9296-83b945302282">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/458bf186-78cd-4342-a029-c3104fbe7d0d">
 </kbd>
 <br><br><br>
-<p align="justify">
-1) Vincular ambiente ao git-hub actions: Abra o Synapse-DEV, selecione a opção <strong>MANAGE</strong> e em seguida a ultima opção de git-configuration, como mostra a imagem abaixo:</p>
-<br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/73370525-6b2a-4296-845d-fd1a42bec98e">
-</kbd>
-<br><br>
 
-Em seguida, selecione o botão **Configurar** no meio da tela.
-<br><br>
-
-2) Em **Tipo de Repositório**, selecionar **GitHub** e em seguida colocar o nome do proprietário da conta:
-<br><br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/4ee41b11-3399-4efa-886c-7212d6c1cbe7">
-</kbd>
-<br><br>
-
-3) Selecionar o repositório desejado e todos os campos serão preenchidos automaticamente. Não mexa em nenhuma configuração e aperte em <strong>Apply.</strong><br>
-
-<br><br>
+### Vincular o Synapse com o Github
+<p align="justify">Abra o Synapse DEV e nos ícones à esquerda selecione <strong>Manage</strong> e em seguida, clique em  <strong>Git configuration</strong>. Feito isso, no meio da tela, selecione a opção de <strong>Configure</strong>.</p>
 
 <kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/7c0df6f0-4302-42fc-bcd6-fd04bb5537b3">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/37c1f94b-42c6-4e83-a255-68ba541a3bdd">
 </kbd>
-<br><br>
+<br><br><br>
+<p align="justify">Em <strong>Repository Type</strong>, selecione o GitHub e em <strong>Github repository owner</strong> coloque o nome do proprietário da conta.</p>
 
-Para criar uma nova branch, no canto superior esquerdo clique em <strong>main branch</strong> e em seguida clique em <strong>New Branch[Alt+N]</strong>.
 <kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/df7cc483-ac19-449d-8fac-f763ecfc1e06">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/f1bb8a5c-6386-47f1-b810-8bffa2295fc0">
 </kbd>
-<br><br>
-Coloque um nome para sua branch e crie conforme o exemplo abaixo. Em seguida, aperte em <strong>Create</strong>.
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/c2eb2066-48b3-47d9-a3df-8d35217d3bc1">
-</kbd>
-<br><br>
-<p align="justify">Para a criação da branch <strong>workspace_publish</strong>, precisamos inicialmente fazer uma publicação no Synapse DEV. Na mesma branch que você acabou de criar, crie uma pipeline com uma atividade <strong> Set variable </strong> e crie uma variável.Após criado, aperte em <strong> Commit all</strong><p> 
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/8f5218fc-bf90-404c-9846-041de95a6b1b">
-</kbd>
-<br><br>
-Após isso, aperte em <strong>OK</strong><br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/bcfc6147-3a8d-4983-9672-0e7adfdf3f7c">
-</kbd>
-<br><br>
-<p align="justify">Feito isso, precisará ser criado um Pull Request. Para isso, clique no nome da sua branch criada no canto superior esquerdo e procure por <strong>Create pull request[Alt+P]</strong></p>.
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/78303962-1a98-4a33-935a-fe5ff84eb807">
-</kbd>
-<br><br>
-<p align="justify">Abra seu repositório Github,  clique em <strong> Create pull request</strong> ou <strong>Compare & pull request</strong> como mostra a imagem abaixo:</p>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/ce4c682d-a0ed-4eb4-948c-209e7afcebcd">
-</kbd>
-<br><br>
-Vai abrir uma aba "Open a pull request". Clique em <strong>Create pull request</strong>.
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/f9628d4c-4ab9-4de1-bb6c-4618b811dc55">
-</kbd>
-<br><br>
-<strong>Confirm merge</strong>.<br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/632e7013-3f1a-4c6f-8180-a6dfbf98b5da">
-</kbd>
-<br><br>
-Realizado os passos anteriores, abra agora sua <strong>main branch</strong> e clique em <strong>Publish</strong>.
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/812bc13a-e59b-4875-951a-9d3646588732">
-</kbd>
+<br><br><br>
+<p align="justify"> Em <strong>Repository name</strong>, selecione o repositório desejado. Para os demais campos, deixe como está e em seguida aperte em <strong>Apply</strong>.</p>
 
-## Configurações Repositório Github
-<p align="justify">Inicialmente, faça uma primeira publicação no ambiente Sinapse DEV para que o Github crie uma branch chamada "Workspace_publish".
-Dentro da conta do GitHub,repositório do synapse e do workspace-publish, crie um caminho de pastas seguindo este padrão: .github/workflows/</p>
-
-<br><br>
 <kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/66cf6c3c-05d4-4301-8a01-449b9ab72fdb">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/1cfc4ead-533c-495e-b3c8-ae4f6ffb4797">
 </kbd>
-<br><br>
+<br><br><br>
 
-E no final deve ser colocado o arquivo com os parâmetros de ambiente, no caso o arquivo: syn-deploy.yml deve ser posto seguindo o path da imagem mostrada acima. 
+### Criando uma Branch
+<p align="justify">No canto superior esquerdo, clique em <strong>New Branch[Alt+N]</strong>.</p>
 
-
-<p align="justify">Dentro do arquivo .yml, você deve adequar as tres linhas "TemplateFile","ParametersFile" e "OverrideArmParameters" com o nome do seu workspace, como mostra na imagem abaixo, destacado em vermelho. Considerando o meu workspace criado, ficou "azure-teste-dev".
-Observe que, o arquivo contém linhas que serão valores herdados do Github Secrets(considere os que estão com "${{secrets.____}}).
-Esses serão os secrets que terão que ser atribuídos no Github</p>
-<br><br>
 <kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/f667ba78-7060-4cea-a2c3-c33ad6bd1c6a">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/b6eae871-548d-45b0-9d9b-b830867b136e">
 </kbd>
-<br><br>
+<br><br><br>
 
-*Observação*
-<p align="justify">A terceira linha mostrada "OverrideArmParameters" não será preciso alterar nesse momento, pois iremos criar esse arquivo mais pra frente, podendo ser ignorada por enquanto.</p>
+<p align="justify">Coloque um nome para sua branch e crie baseada na main conforme o exemplo abaixo. Em seguida, aperte em <strong>Create</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/85476c8e-564d-45ab-8e91-5cc8b19a8746">
+</kbd>
+<br><br><br>
+
+### Workspace_publish
+<p align="justify">A branch workspace_publish será criada automaticamente após ser feito uma publicação no Synapse DEV. Para isso, vamos fazer uma publicação na mesma branch que você acabou de criar! Abra uma pipeline com uma atividade <strong>Set variable</strong> e crie uma variável. Após criado, aperte em <strong>Commit all</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/0309cb13-331f-4177-ad67-69c03766dbc2">
+</kbd>
+<br><br><br>
+
+Aperte em <strong>OK</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/f0dff78e-d2dc-4496-9cb3-ddf9050ba184">
+</kbd>
+<br><br><br>
+<p align="justify">Feito isso, precisará ser criado um <strong>Pull Request</strong>. Para isso, clique no nome da sua branch no canto superior esquerdo e procure por <strong>Create pull request[Alt+P]</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/4e40305d-5c04-4f8c-b086-7a875a8875db">
+</kbd>
+<br><br><br>
+<strong>OBS: Nos passos a seguir, só é possível aprovar um pull request caso você seja o aprovador. Caso contrário, faça uma requisição para o aprovador.</strong>
+<br><br>
+<p align="justify">Abra seu repositório Github, clique em <strong>Create pull request</strong> ou <strong>Compare & pull request</strong> como mostra a imagem abaixo.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/7baaf7ee-e2a5-47c4-8b67-e813bc5bdb91">
+</kbd>
+<br><br><br>
+
+<p align="justify">Vai abrir uma aba Open a pull request. Clique em <strong>Create pull request</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/cffdd34b-75ad-4015-872f-bb0e1da90c16">
+</kbd>
+<br><br><br>
+
+<strong>Merge pull request</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/77176f83-e2bf-417d-b7d6-7294fd7187d8">
+</kbd>
+<br><br><br>
+
+<strong>Confirm merge</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/d495a227-b8f8-4a44-b94b-a474a15047c3">
+</kbd>
+<br><br><br>
+
+Agora, abra sua <strong>main branch</strong> e clique em <strong>Publish</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5af27bb7-0c7a-406b-8a7a-58ca23d0a5b5">
+</kbd>
+<br><br><br>
+
+### Configurações Repositório Github
+
+<p align="justify">Dentro do seu repositório do GitHub, selecione a aba <strong>Code</strong> e procure por <strong>workspace_publish</strong>. Crie um caminho de pastas seguindo este padrão: <strong>.github/workflows/syn-deploy.yml</strong></p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/6d37a2f2-c0ba-4598-bee4-4a0178e769b8">
+</kbd>
+<br><br><br>
+<p align="justify"> E no final deve ser colocado o arquivo com os parâmetros de ambiente, no caso o arquivo <strong>syn-deploy.yml</strong> deve ser posto seguindo o path da imagem mostrada acima.</p>
+
+
+### Configurando arquivo syn-deploy.yml
+<p align="justify">Dentro do arquivo <strong>syn-deploy.yml</strong>, você deve adequar as três linhas <strong>TemplateFile,ParametersFile e OverrideArmParameters</strong> com o nome do seu workspace, como mostra na imagem abaixo destacado em vermelho. Observe que, o arquivo contém linhas que serão valores herdados do Github Secrets(considere os que estão com "${{secrets.____}}). Esses serão os secrets que terão que ser atribuídos no Github.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/a1db97c6-ee99-4518-bee0-01c1538be158">
+</kbd>
+<br><br><br>
+Esses serão os parâmetros que serão herdados no Github: 
 
 * WORKSPACENAME
 * RESOURCEGROUP
@@ -151,19 +149,26 @@ Esses serão os secrets que terão que ser atribuídos no Github</p>
 * SUBSCRIPTIONID
 * TENANTID
 
-<br><br>
 <kbd>
-<img width="800" alt="MicrosoftTeams-image(18)" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/c085bbd7-fe34-4997-a51d-a4f1ff465fb8">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/3d0cc300-90c0-4a60-8687-7974e15ea677">
 </kbd>
-<br><br>
+<br><br><br>
 
+### Configurando Secrets Github
 
-<p align="justify">Após isso, vá em **settings**, e ao lado esquerdo da tela, vá em **Secrets and variables>Actions**. Na aba "Secrets", selecione **"New repository secret"**. Nesse repositório que será atribuído o valor das variáveis que serão herdadas no arquivo syn-deploy.yml.</p>
-<br><br>
+Vá em <strong>Settings</strong>.
+
 <kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/a744988a-e72f-4b05-a720-bc482f50bd3c">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/430172cd-0aa1-49ca-b124-6b21e06da60b">
 </kbd>
-<br><br>
+<br><br><br>
+<p align="justify">Ao lado esquerdo da tela, vá em <strong>Secrets and variables</strong> e <strong>Actions</strong>. Na aba <strong>Secrets</strong>, selecione <strong>New repository secret</strong>. Nesse repositório que será atribuído o valor das variáveis que serão herdadas no arquivo <strong>syn-deploy.yml</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/862df26c-21c7-4042-a1a4-6eb939f36ada">
+</kbd>
+<br><br><br>
+<strong>Vale ressaltar que todos esses parâmetros devem ser preenchidos com os dados do ambiente de Produção.</strong>
 
 Atribua o nome do secret e o valor. Nesse caso, será atribuído para cada um desses:
 
@@ -174,223 +179,268 @@ Atribua o nome do secret e o valor. Nesse caso, será atribuído para cada um de
 * SUBSCRIPTIONID
 * TENANTID
 
-**Exemplo:** <br>
-**Name =** 'WORKSPACENAME'<br>
-**Secret =** '[nome do seu workspace]'<br>
+Exemplo:<br>
+<strong>Name</strong> = WORKSPACENAME<br>
+<strong>Secret</strong> = nome do seu workspace<br>
 
-Em seguida, clique em **Add secret**.<br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/691c3e75-2b2b-4f40-b4ef-4370e9ff4775"><br>
-</kbd><br>
-**Vale ressaltar que todos esses parâmetros devem ser preenchidos com os dados do ambiente de Produção**.<br>
+Em seguida, clique em <strong>Add secret</strong>.
 
-## Como encontrá-los:
-A imagem abaixo mostra como encontrar esses parâmetros no seu workspace:
-* WORKSPACENAME
-* RESOURCEGROUP
-* SUBSCRIPTIONID
-
-Para o SUBSCRIPTIONID você deve abrir seu workspace e logo sem seguida verá o parâmetro:
-<br><br>
 <kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/4b24e1df-d45e-4078-9a2a-68f5df4e3089">
-</kbd>
-<p align="justify">Para o **CLIENTID**, na barra de pesquisa digite App Registrations e clique:</p>
-<br><br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/2837fd29-dfea-4bdf-ad58-15f1bca46545"><br><br>
-</kbd>
-<br><br>
-Após isso, deve ser criado um usuário que será atríbuido permissões nos próximos passos:<br><br>
-<br><br>
-<kbd>
-<img width="800" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/b20c0112-58c8-4e79-9e71-c353a8ca292a"><br>
-</kbd>
-<br><br>
-Na aba All Aplications, você encontrará o usuário criado e seu **CLIENTID**:<br><br>
-<kbd>
-<img width="1000" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/647496ae-abd9-4b8e-b361-5133fd89ba52"><br>
-</kbd>
-<br><br>
-Para encontrar o **TENANTID**, basta clicar no usuário criado na etapa anterior. No caso de exemplo, clique em USER-GIT <br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/ee568520-d1e3-489d-980d-fbc1a4a8b037">
-</kbd>
-<br><br>
-Para o **CLIENTSECRET** ainda no passo anterior, na barra de opções lateral esquerda você irá encontrar a opção *Certificates & secrets* e após clicar nessa opção, clique em **+New client secret** e criar uma identidade:
-<br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/e519d68a-3a76-4f70-87bf-9282abb17059">
-</kbd>
-<br>
-
-Coloque uma descrição de sua preferência e no campo abaixo você pode deixar 90 dias por padrão. Após feito isso você pode clicar em *Add* e então voltar para a página anterior:
-<br><br>
-<kbd>
-<img width="1000"  height="500" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/610c3c7e-1c7c-4ade-9aff-cc3ceea9001c">
-</kbd>
-<br><br>
-
-Com todos os parâmetros preenchidos, entre no seu workspace do Synapse de Produção e vá nas opções de **Access Control(IAM)** e clicar em Role assignment, como mostra a imagem abaixo:
-
-<br><br>
-<kbd>
-<img width="900" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/cf32881b-888f-4fe5-b540-4233213000e5">
-</kbd>
-<br><br>
-
-Selecione a primeira opção de *Reader* e em seguida em *Next*
-<br><br>
-<kbd>
-<img width="900" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/8fb1e6b7-ef91-4780-8866-68976ceaec79">
-</kbd>
-<br><br>
-Após isso clicar na opção *Select Members* para selecionar o usuário para dar permissão de Reader ao Resource Group:
-<br>
-<kbd>
-<img width="900" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/ded5985b-e1ae-4bac-9d5a-85d70ab0b71d">
-</kbd>
-<br><br>
-
-Após criado a permissão de *READER*, abra o Synapse de produção e acesse o Access Control (IAM) exatamente do mesmo jeito do passo anterior, mas agora dando permissão de *Contributor* ao workspace de produção.
-Então novamente clicar em *Role Assigment* e depois em *Add* e então selecionar *Privileged Admnistrator roles* como mostra a imagem abaixo:
-<br><br>
-<kbd>
-<img width="2100" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/17ac8e05-548e-441c-ac16-700e4895e228">
-</kbd>
-<br><br>
-
-Clique em *Select Members* e selecione o usuário para aplicar essa permissão de *Contributor*:
-<br><br>
-<kbd>
-<img width="1000" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/3ad9c74b-584a-46d7-8c26-330fed09ddd3">
-</kbd>
-<br><br>
-
-Após esses passos, você terá o usuario com permissões de Reader no resource group e Contributor no workspace de produção.
-
-Por ultimo abra o Synapse Studio, acesse a opção **Manage** na lateral esquerda:
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/a0778f1c-5cd7-4c39-bafd-4095eaa669ad">
-</kbd>
-<br><br>
-
-Após isso, vá em **Access control** no menu lateral esquerdo e clicar em **Adicionar** para atribuir a função de **Editor de Artefato** ao usuário anteriormente criado, e na barra de baixo você deve selecionar o usuário que deseja atribuir:
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/3437f11a-f249-4ae7-bd22-72c9e5d19ea8">
-</kbd>
-<br><br>
-## Configurar Azure Key Vault
-**Deverá ser criado um Key Vault para cada ambiente Synapse DEV e PROD**.
-
-Passo 1: Em sua conta do Synapse, vá até a barra de pesquisa e digite por **Key Vault**, e após isso clique em **Create**
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/aea32c73-2fe9-45eb-a110-48ab4b651220">
-</kbd>
-<br><br>
-Após isso, preencha as informações de criação do key vault atribuindo o resource group que foi criado no Synapse de Desenvolvimento. Em seguida, vá até Next e Review+Create. 
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/a0f521a5-f8f3-4249-96c0-28d95324c963">
-</kbd>
-<br><br>
-Após dar permissão de acesso ao usuário para criar os Secrets dentro do Key-Vault, crie os secrets com o mesmo nome do arquivo .yml dos passos anteriores.(argumentar melhor).
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/8ac96d49-fed9-4748-91bd-32e353bdbe3a">
-</kbd>
-<br><br>
-**Obs: Todo esse passo deve ser feito para ambiente de PRD também, com algumas ressalvas que iremos ver logo a baixo.**
-
-
-Para o ambiente de produção você deve seguir os passos a seguir:
- 
-Ir no Key Vault, clicar na lateral esquerda em **Access Control(IAM)** e em seguida abra **Role Assignments** e procure por **KEY VAULT SECRETS OFFICER**. Em seguida, clique em Next:
-<br><br>
-<kbd>
-<img width="1600" height="900" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/c4b6a4d2-ec4e-4dda-b556-a6558701b14b">
-</kbd>
-<br><br>
-Feito isso, vá em **Members** e na opção **Assign access to** selecione **"Managed identity"**. Depois de selecionado, clique em **+Select Members**.
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/1eee6650-428e-4f7d-8938-018bfe8ae37c">
-</kbd>
-<br><br>
-Selecione sua subscription. Em **Managed Identity** selecione Synapse workspace(). Depois disso, selecione seu ambiente Synapse de Produção.
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/102155624/88f5b025-1cc9-4a15-9067-27d47966a824)">
-</kbd>
-<br><br>
-
-Agora sua permissão foi atribuida ao ambiente de produção.
-
-O proximo passo você precisa publicar algo novamente em DEV com o KV devidamente criado. Após isso você deverá entrar em seu arquivo TemplateWorkspace e 
-buscar o nome do KV que foi gerado automaticamente (geralmente ele é criado na linha 20) como mostra abaixo:
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/5e431ae6-8f16-4de0-b4d4-d98653faceb9">
-</kbd>
-<br><br>
-Após encontrar esses parametros, crie um arquivo chamado ParameterPRD.json dentro da pasta do seu workspace de DEV e cole esses parametros no formato chave-valor:
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/971224ab-0932-41ca-9363-bb2fc46a809c">
-</kbd>
-<br><br>
-Após feito isso, você devera voltar no seu arquivo .yaml e na linha de "OverrideArmParameters" e você devera preenchê-lo com o nome de seu workspace e o nome do arquivo que voce criou chamado: ParameterPRD.json assim como mostra a imagem abaixo:
-<br><br>
-<kbd>
-<img width="600" alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/36ea49af-9b94-4716-94a3-989a24090f23">
-</kbd>
-<br><br>
-
-## Usabilidade
-Em sua branch no ambiente de Desenvolvimento após existir mudanças, o processo para levar para produção ira seguir esses passos:
-1) Realize um commit com suas mudanças. No exemplo abaixo, iremos utilizar a "Pipeline 2" que não existe em produção:
-<br><br>
-<kbd>
-<img width="587" alt="imagem1" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/30d26293-38b7-444c-8700-d30f4635f8d8">
-</kbd>
-<br><br><br>
-2) Crie um pull request para branch principal. No exemplo é a "main branch": 
-<br><br>
-<kbd>
-<img width="202" alt="MicrosoftTeams-image (40)" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/87d75eeb-ae2c-4c42-b63e-62ec5de195fa">
-</kbd>
-<br><br><br>
-3) Após seu Pull Request ser aprovado, a "main branch" ira possuir todas as suas alterações. Portanto, o responsável pelo Pull Request, deverá clicar em Plublicar como mostra a imagem abaixo:
-<br><br>
-<kbd>
-<img width="310" alt="IMAGEM3" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/00ed549b-3752-4a26-a5d2-05dbecb80805">
-</kbd>
-<br><br><br>
-4) Aguarde até que a mensagem de sucesso apareça em sua tela:
-<br><br>
-<kbd>
-<img width="957" alt="IMAGEM4" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/90c860d6-0638-4854-afb7-aac06e062e5a">
-</kbd>
-<br><br><br>
-5) Após isso, entre no ambiente de produção e você verá suas alterações no ambiente de produção:
-<br><br>
-<kbd>
-<img width="400" alt="IMAGEM5" src="https://github.com/vini-azure22/Synapse_CiCd/assets/141336497/cb77a586-d007-4661-8598-918092041f05">
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/28f720e4-f015-468f-b9a2-d86a6f9de088">
 </kbd>
 <br><br><br>
 
+### Como encontrar cada um dos parâmetros
+
+Para os parâmetros:<br>
+* <strong>WORKSPACENAME</strong><br>
+* <strong>RESOURCEGROUP</strong><br>
+* <strong>SUBSCRIPTIONID</strong><br>
+
+<p align="justify">No portal Azure, procure pelo seu Synapse workspace de produção. Na aba da esquerda ao lado, vá em <strong>Overview</strong> e encontrará as informações dos três parâmetros listados acima.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/44f345af-3469-45a3-8ef2-728bc970378e">
+</kbd>
 <br><br><br>
-## Licença
+Para os parâmetros :
 
-Este projeto é disponibilizado sob os termos da Licença MIT.
+<strong>CLIENTID</strong><br>
+<strong>CLIENTSECRET</strong><br>
+<strong>TENANTID</strong><br>
 
-Direitos autorais 2023 Ernst & Young (EY)
+<p align="justify">Deverá ser criado um Service Principal.Na barra de pesquisa digite <strong>App Registrations</strong> e selecione.</p>
 
-A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados (o "Software"), para tratar o Software sem restrições, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software, e permitir que as pessoas a quem o Software seja fornecido façam isso, sujeitas às seguintes condições:
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/874f9d93-f936-49cc-b393-8f909ab473f3">
+</kbd>
+<br><br><br>
+Feito isso, clique em <strong>+New registration</strong>.
 
-O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do Software.
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/d4d36c8e-b861-474b-897b-232bba9a14c3">
+</kbd>
+<br><br><br>
+Após isso, atribua um nome qualquer e aperte em <strong>Register</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/3bd0606b-3133-4f94-a2cc-7899ed96fb85">
+</kbd>
+<br><br><br>
+
+<p align="justify">Após criado, você será levado para a página <strong>Overview</strong> do Service Principal. Aqui, você encontrará o <strong>CLIENTID</strong> e <strong>TENANTID</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/dae17adb-f935-4e4e-8893-1e0b3df5920e">
+</kbd>
+<br><br><br>
+<p align="justify">Para o <strong>CLIENTSECRET</strong>, na barra de opções lateral esquerda selecione a opção <strong>Certificates & secrets</strong>. Após isso, clique em <strong>+ New client secret</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/b26adf1e-5f56-4168-9f23-016cbe8a2457">
+</kbd>
+<br><br><br>
+<p align="justify">Em <strong>Description</strong> coloque uma descrição qualquer ou um nome. Em seguida, clique em <strong> Add </strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5456a185-9831-4e96-b58b-36de8ce41e82">
+</kbd>
+<br><br><br>
+<p align="justify">Após criado aparecerá na coluna <strong>Value</strong> o valor do <strong>CLIENTSECRET</strong>. Grave esse valor, pois ele <strong>só aparecerá uma vez e não será possível ver novamente!</strong></p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/b6962899-ed70-4051-9b61-0cc058093254">
+</kbd>
+<br><br><br>
+
+### Atribuindo permissões ao Service Principal
+
+<p align="justify">Com todos os parâmetros preenchidos dos passos anteriores, entre no seu workspace do Synapse de <strong>Produção</strong> e vá nas opções de <strong>Access Control(IAM)</strong> e clique em <strong>Role assignment</strong>. Procure mais acima a opção <strong>+ Add</strong>. </p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/91469a4b-e253-4650-9e75-f406c3a3c67e">
+</kbd>
+<br><br><br>
+<p align="justify">Será atribuído a permissão de <strong>Reader</strong> do Service Principal ao resource group de produção. Para isso, selecione a primeira opção de Reader e em seguida em <strong>Next</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/702faa15-d876-4d0e-9942-d80aad982b01">
+</kbd>
+<br><br><br>
+<p align="justify">Na aba Members, clique na opção <strong>+ Select members</strong>. Utilize a barra de pesquisa ao lado para escolher o usuário e clique em <strong>Select</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/a60ace36-9ff5-4fa8-ba0d-1d2ecf461a72">
+</kbd>
+<br><br><br>
+Feito isso, clique em <strong>Review + assign</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/6bac5d72-e8c6-4fd9-bbbc-ed244956aa88">
+</kbd>
+<br><br><br>
+<p align="justify">Dado a permissão de Reader, repita o passo anterior, mas agora dê a permissão de <strong>Contributor</strong> ao workspace de produção. Clique novamente em <strong>Role Assigment</strong> e depois em <strong>+Add</strong>. Selecione a aba Privileged Admnistrator roles, e clique em <strong>Contributor</strong>. Em seguida, aperte em <strong>Next</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/e1c1db92-0fee-4c87-9eab-99f1c5a3b1c2">
+</kbd>
+<br><br><br>
+<p align="justify"> Em Members, clique em em <strong>+Select members</strong> e selecione o usuário para aplicar a permissão de <strong>Contributor</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/4040398a-e1ef-488e-bd52-077ec49819d1">
+</kbd>
+<br><br><br>
+Clique em <strong>Review + assign</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/0629429c-3868-4f6a-9749-171204867430">
+</kbd>
+<br><br><br>
+Por fim, abra o Synpase Studio do Synapse de Produção.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5d757a3c-2ff6-429d-93f2-04be234c528b">
+</kbd>
+<br><br><br>
+<p align="justify">Vá até a opção <strong>Manage</strong> na lateral esquerda e <strong>Access control</strong>. Clique em <strong>+ Add</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/bdb79faa-e708-4e22-9381-47d1c8d86374">
+</kbd>
+<br><br><br>
+<p align="justify">Selecione a função <strong>Synapse Artifact Publisher</strong>. Na barra de baixo você deve selecionar o usuário Service Principal anteriormente criado e clicar em <strong>Apply</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/ca292ec5-8f1b-49c5-8d8b-e8a5fe8db85b">
+</kbd>
+<br><br><br>
+
+### Configurar Azure Key Vault
+
+<strong>Deverá ser criado um Key vault para os dois ambientes DEV e PROD.</strong>
+
+No portal Azure, vá até a barra de pesquisa e digite por <strong>Key Vaults</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/b2512f47-2b02-4960-8622-6c012d820d1b">
+</kbd>
+<br><br><br>
+Clique em <strong>+Create</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/8845731d-e5ab-407f-bd7f-822e70e7398b">
+</kbd>
+<br><br><br>
+<p align="justify">Após isso, preencha as informações de criação do key vault atribuindo o resource group que foi criado no Synapse de Produção. Em seguida, vá até <strong>Review+Create</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/fc74c4e3-1903-46e7-99f2-ab79b12016c0">
+</kbd>
+<br><br><br>
+<p align="justify">No Key Vault de produção, clique na lateral esquerda em <strong>Access Control(IAM)</strong>, clique em <strong>+Add</strong>e <strong>Add role assignment</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/1973a791-e2ef-419e-8b50-f1a4a032b977">
+</kbd>
+<br><br><br>
+Em <strong>Role Assignments</strong> procure por <strong>Key Vault Secrets Officer</strong>. Em seguida, clique em <strong>Next</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/d7ce34e8-d6ec-4808-ad38-66dc2cab74b3">
+</kbd>
+<br><br><br>
+<p align="justify">Feito isso, vá em Members e na opção <strong>Assign access to</strong> selecione <strong>Managed identity</strong>. Depois de selecionado, clique em <strong>+Select Members</strong>.</p>
+
+Em <strong>Managed Identity</strong> selecione Synapse workspace(). Depois disso, selecione seu ambiente Synapse de Produção.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/3558faa7-475d-42e0-a39d-69a8b9de4533">
+</kbd>
+<br><br><br>
+
+### Configurar Linked Service
+
+Em seu Workspace de DEV, vá até <strong>Manage/<strong> e <strong>Linked services</strong>. Clique em <strong>+ New</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5a679cf7-4de5-4a6a-8d6e-3d917286f6f5">
+</kbd>
+<br><br><br>
+Na barra de pesquisa pesquise por <strong>Azure Key Vault</strong> e clique em <strong>Continue</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/b104286e-89bf-4eb6-9c42-43dd03c86717">
+</kbd>
+<br><br><br>
+<strong>Nome:</strong> Atribua um nome para o Key Vault.<br>
+<strong>Assinatura do Azure:</strong> Selecione sua assinatura.<br>
+<strong>Nome do Azure Key Vault:</strong> Selecione o Key Vault criado do ambiente de produção.<br>
+
+Para os demais, deixe padrão. Após isso, aperte em <strong>Commit</strong>.
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/9798d961-e003-437b-ab52-3418801650e7">
+</kbd>
+<br><br><br>
+<p align="justify"> O próximo passo você precisará publicar algo novamente em DEV com o Linked Service devidamente criado( repita o passo do tópico Workspace_publish).</p>
 
 
+<p align="justify">Após isso você deverá entrar em seu arquivo <strong>TemplateWorkspace.json</strong> e buscar o nome do KV que foi gerado automaticamente como mostra abaixo:</p>
 
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/6e5ec722-dffe-4d55-93dd-d54bc019333c">
+</kbd>
+<br><br><br>
+<p align="justify"> Copie o "LS_KV_DEV_properties_typeProperties_baseUrl" e o <strong>defaultValue</strong>. Eles serão utilizados no próximo passo para a criação do arquivo <strong>ParameterPRD.json</strong>.
+
+### Criando arquivo ParameterPRD.json
+
+<p align="justify"> No seu repositório Github, crie um arquivo chamado <strong>ParameterPRD.json</strong> dentro da pasta do seu workspace de DEV e cole os parâmetros copiados anteriormente no seguinte formato:</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/ea247b74-ef31-4cd2-8f02-db88b4a687c4">
+</kbd>
+<br><br><br>
+<p align="justify"> O nome do arquivo <strong>ParameterPRD.json</strong>, certifique-se de que o seja exatamente igual ao nome que está no arquivo <strong>syn-deploy.yml</strong> em <strong>OverrideArmParameters</strong>.</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/a444a571-a19d-4a5d-a6c6-2a7f6bb9ef47">
+</kbd>
+<br><br><br>
+
+## Uso
+
+<p align="justify"> Em sua branch no ambiente de Desenvolvimento caso haja mudanças, o processo para levar para <strong>produção</strong> irá seguir esses passos:</p>
+
+<p align="justify"> Realize um <strong>commit</strong> com suas mudanças. No exemplo abaixo, iremos utilizar a "Pipeline 2" na branch produto:</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/ea4ee1d9-f5d6-40fe-aaff-9fe60319c172">
+</kbd>
+<br><br><br>
+<p align="justify"> Crie um <strong>Pull request</strong> para branch principal. No exemplo é a main branch</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/39fdce80-ef09-4dc4-96b2-fff79d89f8bb">
+</kbd>
+<br><br><br>
+<p align="justify"> Após ter seu <strong>Pull request aprovado</strong>, a main branch irá possuir todas as suas alterações. Portanto, o responsável pelo Pull Request, deverá clicar em Publish como mostra a imagem abaixo:</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/446f7b39-5895-4bea-bc40-59dc0f33143d">
+</kbd>
+<br><br><br>
+<p align="justify"> Aguarde até que a mensagem de sucesso apareça em sua tela:</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/61eaaf62-8bbf-4f6f-8d36-c33040784d6a">
+</kbd>
+<br><br><br>
+<p align="justify"> Após isso, entre no ambiente de <strong>produção/<strong> e você verá suas alterações no ambiente de produção:</p>
+
+<kbd>
+<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/2285cf81-68b5-4c93-a704-1defcd49571d">
+</kbd>
+<br><br><br>
+Esteira CI/CD finalizada!
