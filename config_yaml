@@ -1,6 +1,7 @@
 ##Yaml para CICD Synapse
 name: CI222
 
+
 on:
     push:
       branches:
