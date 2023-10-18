@@ -1,0 +1,7 @@
+{
+	"name": "IntegrationRuntimeMySql",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Teste de conexao com MySql"
+	}
+}
