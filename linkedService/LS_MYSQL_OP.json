@@ -1,0 +1,16 @@
+{
+	"name": "LS_MYSQL_OP",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "MySql",
+		"typeProperties": {
+			"connectionString": "server=127.0.0.1;port=3306;database=schema_teste;user=root;sslmode=1;usesystemtruststore=0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzN2E5Y2NiNy02ODg1LTRiNDEtOGFkNS1iMmFjNDJjZGU0YjgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IntegrationRuntimeMySql",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
