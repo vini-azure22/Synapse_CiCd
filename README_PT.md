@@ -15,7 +15,10 @@
   * Licença
 
 ## Autores:
+Bruno Andrade<br>
+Raphael Freixo<br>
 Vinícius Peters<br>
+
 
 ## Visão Geral
 <p align="justify">A implementação do pipeline CI/CD é necessária para agilizar e padronizar a estrutura do seu ambiente, garantindo a qualidade do código desde o ambiente de desenvolvimento até a sua implementação no ambiente de produção, o que é feito automaticamente após a aprovação dos artefatos. Este documento contém o procedimento para implementar essa estrutura de CI/CD usando o Github Actions e o ambiente Azure.</p>
