@@ -140,7 +140,7 @@ Agora, abra sua <strong>main branch</strong> e clique em <strong>Publish</strong
 
 ### Configurações Repositório Github
 
-<p align="justify">Dentro do seu repositório do GitHub, selecione a aba <strong>Code</strong> e procure por <strong>workspace_publish</strong>. Crie um caminho de pastas seguindo este padrão: <strong>.github/workflows/syn-deploy.yml</strong></p>
+<p align="justify">Dentro do seu repositório do GitHub, selecione a aba <strong>Code</strong> e procure o arquivo syn-deploy.yml nas pastas ao lado, copie todo código e cole no arquivo que você acabou de criar seguindo o caminho mostrado na imagem acima.</strong></p>
 
 <kbd>
 <img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/6d37a2f2-c0ba-4598-bee4-4a0178e769b8">
