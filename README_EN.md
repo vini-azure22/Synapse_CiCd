@@ -150,7 +150,7 @@ After completing the previous steps, now open your <strong>main branch</strong> 
 <img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/6d37a2f2-c0ba-4598-bee4-4a0178e769b8">
 </kbd>
 <br><br><br>
-<p align="justify"> And at the end, place the file with the environment parameters, in this case, <strong>syn-deploy.yml</strong>file should be placed following the path shown in the image above.</p>
+<p align="justify"> And at the end, place the file with the environment parameters, look for the <strong>syn-deploy.yml</strong>strong> file in the folders on the side, copy all the code and paste it into the file you just created, following the path shown in the image above.</p>
 
 
 ### Configuring syn-deploy.yml File
