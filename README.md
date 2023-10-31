@@ -1,5 +1,5 @@
 ## Escolha o idioma / Choose the language
-- [Português (BR)](README_PT.md)
+- [Português (BR)](README.md)
 - [English](README_EN.md)
 
 
