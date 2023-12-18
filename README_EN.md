@@ -142,6 +142,14 @@ After completing the previous steps, now open your <strong>main branch</strong> 
 </kbd>
 <br><br><br>
 
+### Finding syn-deploy-yml file
+
+<p align="justify"> The contents of <strong>syn-deploy.yml</strong> file will be used for the activities below.</p>
+<kbd>
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/9c2173b9-f30a-4a03-84d6-57d3f07d05fe">
+</kbd>
+<br><br>
+
 ### Github Repository Settings
 
 <p align="justify">Inside your GitHub repository, select the <strong>Code</strong> tab and search for <strong>workspace_publish</strong>. Create a folder structure following this pattern: <strong>.github/workflows/syn-deploy.yml</strong></p>
@@ -387,7 +395,7 @@ In <strong>Managed Identity</strong> select Synapse workspace(). After that, sel
 
 ### Configure Linked Service
 
-In your DEV Workspace, go to <strong>Manage/<strong> and <strong>Linked services</strong>. Click <strong>+ New</strong>.
+In your DEV Workspace, go to <strong>Manage<strong> and <strong>Linked services</strong>. Click <strong>+ New</strong>.
 
 <kbd>
 <img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5a679cf7-4de5-4a6a-8d6e-3d917286f6f5">
@@ -466,7 +474,7 @@ For the others, leave it default. After that, press <strong>Commit</strong>.
 <p align="justify"> After that, go to the <strong>production</strong> environment and you will see your changes in the production environment:</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/2285cf81-68b5-4c93-a704-1defcd49571d">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/da4b985f-1f6f-4977-ae4f-c8a881c5265b">
 </kbd>
 <br><br><br>
 CI/CD finished!
