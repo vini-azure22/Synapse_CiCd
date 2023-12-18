@@ -136,7 +136,15 @@ Agora, abra sua <strong>main branch</strong> e clique em <strong>Publish</strong
 <kbd>
 <img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5af27bb7-0c7a-406b-8a7a-58ca23d0a5b5">
 </kbd>
-<br><br><br>
+<br><br>
+
+### Localizando Arquivo syn-deploy-yml
+
+<p align="justify"> O conteúdo do arquivo <strong>syn-deploy.yml</strong> será usado para as atividades abaixo.</p>
+<kbd>
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/9c2173b9-f30a-4a03-84d6-57d3f07d05fe">
+</kbd>
+<br><br>
 
 ### Configurações Repositório Github
 
@@ -377,7 +385,7 @@ Em <strong>Managed Identity</strong> selecione Synapse workspace(). Depois disso
 
 ### Configurar Linked Service
 
-Em seu Workspace de DEV, vá até <strong>Manage/<strong> e <strong>Linked services</strong>. Clique em <strong>+ New</strong>.
+Em seu Workspace de DEV, vá até <strong>Manage<strong> e <strong>Linked services</strong>. Clique em <strong>+ New</strong>.
 
 <kbd>
 <img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/5a679cf7-4de5-4a6a-8d6e-3d917286f6f5">
@@ -456,7 +464,7 @@ Para os demais, deixe padrão. Após isso, aperte em <strong>Commit</strong>.
 <p align="justify"> Após isso, entre no ambiente de <strong>produção/<strong> e você verá suas alterações no ambiente de produção:</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/2285cf81-68b5-4c93-a704-1defcd49571d">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/assets/145786554/682d1fdc-92be-4258-8c91-379d4f8bbaae">
 </kbd>
 <br><br><br>
 Esteira CI/CD finalizada!
