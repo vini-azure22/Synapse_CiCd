@@ -36,13 +36,13 @@ Vinícius Peters<br>
 <p align="justify">Em seu repositório Github na aba Code, aperte em <strong>creating a new file</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/8c8d9fec-6558-46de-bd87-b242761201b2">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/1.%20Creating%20New%20File.png">
 </kbd>
 <br><br><br>
 <p align="justify">No caminho de pastas, crie um arquivo chamado <strong>readme.yml</strong> na seguinte estrutura <strong> ".github/workflows/readme.yml"</strong>. Após feito isso, aperte em <strong>Commit Changes...</strong></p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/458bf186-78cd-4342-a029-c3104fbe7d0d">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/2.Readme.yml.png">
 </kbd>
 <br><br><br>
 
@@ -50,19 +50,19 @@ Vinícius Peters<br>
 <p align="justify">Abra o Synapse DEV e nos ícones à esquerda selecione <strong>Manage</strong> e em seguida, clique em  <strong>Git configuration</strong>. Feito isso, no meio da tela, selecione a opção de <strong>Configure</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/37c1f94b-42c6-4e83-a255-68ba541a3bdd">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/3.%20Git%20Configuration.png">
 </kbd>
 <br><br><br>
 <p align="justify">Em <strong>Repository Type</strong>, selecione o GitHub e em <strong>Github repository owner</strong> coloque o nome do proprietário da conta.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/f1bb8a5c-6386-47f1-b810-8bffa2295fc0">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/4.%20Configurar%20Reposit%C3%B3rio%20github%201.png">
 </kbd>
 <br><br><br>
 <p align="justify"> Em <strong>Repository name</strong>, selecione o repositório desejado. Para os demais campos, deixe como está e em seguida aperte em <strong>Apply</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/1cfc4ead-533c-495e-b3c8-ae4f6ffb4797">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/5.%20Configurar%20Reposit%C3%B3rio%20github%202.png">
 </kbd>
 <br><br><br>
 
@@ -70,14 +70,14 @@ Vinícius Peters<br>
 <p align="justify">No canto superior esquerdo, clique em <strong>New Branch[Alt+N]</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/b6eae871-548d-45b0-9d9b-b830867b136e">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/6.%20Criando%20Nova%20Branch.png">
 </kbd>
 <br><br><br>
 
 <p align="justify">Coloque um nome para sua branch e crie baseada na main conforme o exemplo abaixo. Em seguida, aperte em <strong>Create</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/85476c8e-564d-45ab-8e91-5cc8b19a8746">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/7.%20Criando%20Nova%20Branch%202.png">
 </kbd>
 <br><br><br>
 
@@ -85,20 +85,20 @@ Vinícius Peters<br>
 <p align="justify">A branch workspace_publish será criada automaticamente após ser feito uma publicação no Synapse DEV. Para isso, vamos fazer uma publicação na mesma branch que você acabou de criar! Abra uma pipeline com uma atividade <strong>Set variable</strong> e crie uma variável. Após criado, aperte em <strong>Commit all</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/0309cb13-331f-4177-ad67-69c03766dbc2">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/8.%20Vari%C3%A1vel%20para%20Publica%C3%A7%C3%A3o.png">
 </kbd>
 <br><br><br>
 
 Aperte em <strong>OK</strong>.
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/f0dff78e-d2dc-4496-9cb3-ddf9050ba184">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/9.%20Confirmando%20Publica%C3%A7%C3%A3o.png">
 </kbd>
 <br><br><br>
 <p align="justify">Feito isso, precisará ser criado um <strong>Pull Request</strong>. Para isso, clique no nome da sua branch no canto superior esquerdo e procure por <strong>Create pull request[Alt+P]</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/4e40305d-5c04-4f8c-b086-7a875a8875db">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/10.%20Criar%20Solicita%C3%A7%C3%A3o%20de%20Pull.png">
 </kbd>
 <br><br><br>
 <strong>OBS: Nos passos a seguir, só é possível aprovar um pull request caso você seja o aprovador. Caso contrário, faça uma requisição para o aprovador.</strong>
