@@ -33,13 +33,13 @@ Vinícius Peters<br>
 
 ## Configuração
 ### Arquivo readme.yml
-<p align="justify">Em seu repositório Github na aba Code, aperte em <strong>creating a new file</strong>.</p>
+<p align="justify">Em seu repositório Github na aba Code, clique em <strong>creating a new file</strong>.</p>
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/1.%20Creating%20New%20File.png">
 </kbd>
 <br><br><br>
-<p align="justify">No caminho de pastas, crie um arquivo chamado <strong>readme.yml</strong> na seguinte estrutura <strong> ".github/workflows/readme.yml"</strong>. Após feito isso, aperte em <strong>Commit Changes...</strong></p>
+<p align="justify">No caminho de pastas, crie um arquivo chamado <strong>readme.yml</strong> na seguinte estrutura <strong> ".github/workflows/readme.yml"</strong>. Após feito isso, clique em <strong>Commit Changes...</strong></p>
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/2.Readme.yml.png">
@@ -59,7 +59,7 @@ Vinícius Peters<br>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/4.%20Configurar%20Reposit%C3%B3rio%20github%201.png">
 </kbd>
 <br><br><br>
-<p align="justify"> Em <strong>Repository name</strong>, selecione o repositório desejado. Para os demais campos, deixe como está e em seguida aperte em <strong>Apply</strong>.</p>
+<p align="justify"> Em <strong>Repository name</strong>, selecione o repositório desejado. Para os demais campos, deixe como está e em seguida clique em <strong>Apply</strong>.</p>
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/5.%20Configurar%20Reposit%C3%B3rio%20github%202.png">
@@ -74,7 +74,7 @@ Vinícius Peters<br>
 </kbd>
 <br><br><br>
 
-<p align="justify">Coloque um nome para sua branch e crie baseada na main conforme o exemplo abaixo. Em seguida, aperte em <strong>Create</strong>.</p>
+<p align="justify">Coloque um nome para sua branch e crie baseada na main conforme o exemplo abaixo. Em seguida, clique em <strong>Create</strong>.</p>
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/7.%20Criando%20Nova%20Branch%202.png">
@@ -82,14 +82,14 @@ Vinícius Peters<br>
 <br><br><br>
 
 ### Workspace_publish
-<p align="justify">A branch workspace_publish será criada automaticamente após ser feito uma publicação no Synapse DEV. Para isso, vamos fazer uma publicação na mesma branch que você acabou de criar! Abra uma pipeline com uma atividade <strong>Set variable</strong> e crie uma variável. Após criado, aperte em <strong>Commit all</strong>.</p>
+<p align="justify">A branch workspace_publish será criada automaticamente após ser feito uma publicação no Synapse DEV. Para isso, vamos fazer uma publicação na mesma branch que você acabou de criar! Abra uma pipeline com uma atividade <strong>Set variable</strong> e crie uma variável. Após criado, clique em <strong>Commit all</strong>.</p>
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/8.%20Vari%C3%A1vel%20para%20Publica%C3%A7%C3%A3o.png">
 </kbd>
 <br><br><br>
 
-Aperte em <strong>OK</strong>.
+clique em <strong>OK</strong>.
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/9.%20Confirmando%20Publica%C3%A7%C3%A3o.png">
@@ -399,7 +399,7 @@ Na barra de pesquisa pesquise por <strong>Azure Key Vault</strong> e clique em <
 <strong>Assinatura do Azure:</strong> Selecione sua assinatura.<br>
 <strong>Nome do Azure Key Vault:</strong> Selecione o Key Vault criado do ambiente de produção.<br>
 
-Para os demais, deixe padrão. Após isso, aperte em <strong>Commit</strong>.
+Para os demais, deixe padrão. Após isso, clique em <strong>Commit</strong>.
 
 <kbd>
 <img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/49.%20Linked%20Service%203.png">
