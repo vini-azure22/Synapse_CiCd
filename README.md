@@ -171,11 +171,6 @@ Esses serão os parâmetros que serão herdados no Github:
 * SUBSCRIPTIONID
 * TENANTID
 
-<kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/3d0cc300-90c0-4a60-8687-7974e15ea677">
-</kbd>
-<br><br><br>
-
 ### Configurando Secrets Github
 
 Vá em <strong>Settings</strong>.
