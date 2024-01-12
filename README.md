@@ -106,28 +106,33 @@ Aperte em <strong>OK</strong>.
 <p align="justify">Abra seu repositório Github, clique em <strong>Create pull request</strong> ou <strong>Compare & pull request</strong> como mostra a imagem abaixo.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/7baaf7ee-e2a5-47c4-8b67-e813bc5bdb91">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/11.%20Criar%20Solicita%C3%A7%C3%A3o%20de%20Pull%202.png">
 </kbd>
 <br><br><br>
 
 <p align="justify">Vai abrir uma aba Open a pull request. Clique em <strong>Create pull request</strong>.</p>
 
 <kbd>
-<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/12.png">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/12.%20Cria%20Solicita%C3%A7%C3%A3o%20de%20Pull%203.png">
 </kbd>
 <br><br><br>
 
-<strong>Merge pull request e logo em seguida Confirm Merge</strong>.
+<strong>Merge pull request</strong>.
 
 <kbd>
-<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/13.png">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/13.%20Merge%20Pull%20Request.png">
+</kbd>
+<br><br><br>
+<strong>Confirm Merge</strong>.
+<kbd>
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/14.%20Confirmar%20Merge.png">
 </kbd>
 <br><br><br>
 
 <strong>Publish</strong>.
 
 <kbd>
-<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/13.png">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/15.%20Publicar%20Main.png">
 </kbd>
 <br><br><br>
 
@@ -135,7 +140,7 @@ Aperte em <strong>OK</strong>.
 
 <p align="justify"> O conteúdo do arquivo <strong>syn-deploy.yml</strong> será usado para as atividades abaixo.</p>
 <kbd>
-<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/17.%20Arquivo%20syn-deploy.yml.png">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/16.%20Caminho%20de%20Pasta%20do%20Arquivo%20syn-deploy.yml.png">
 </kbd>
 <br><br>
 
@@ -144,7 +149,7 @@ Aperte em <strong>OK</strong>.
 <p align="justify">Dentro do seu repositório do GitHub, selecione a aba <strong>Code</strong> e procure o arquivo syn-deploy.yml nas pastas ao lado, copie todo código e cole no arquivo que você acabou de criar seguindo o caminho mostrado na imagem acima.</strong></p>
 
 <kbd>
-<img alt="image" src="https://github.com/brunoandrade7771/Synapse-teste-cicd/assets/145786554/6d37a2f2-c0ba-4598-bee4-4a0178e769b8">
+<img alt="image" src="https://github.com/vini-azure22/Synapse_CiCd/blob/main/IMAGES-GIT/17.%20Arquivo%20syn-deploy.yml.png">
 </kbd>
 <br><br><br>
 <p align="justify"> E no final deve ser colocado o arquivo com os parâmetros de ambiente, no caso o arquivo <strong>syn-deploy.yml</strong> deve ser posto seguindo o path da imagem mostrada acima.</p>
